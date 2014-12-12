@@ -1,17 +1,17 @@
 hbase-coprocessor-example
 =================
-This example demonstrate how to implement group by aggregation using HBase coprocessor. The HBase version used here is 
-0.94.18, which is exactly the same version used in AWS EMR.
+This example demonstrates how to implement a group-by aggregation using HBase coprocessor and Algebird monoid. The HBase version we used here is 
+0.94.18, which is exactly the same one available on AWS EMR.
 
-### Create demo table in local HBase
+### Create a demo table in your local HBase application
 * Download and unzip hbase 0.94.18
 * Start hbase ```bin/start-hbase.sh``` 
-* Create the table for unit tests
+* Create a table named as mobile-device
 ```shell
 create 'mobile-device', { NAME => 'stats', VERSIONS => 1, TTL => 7776000 }
 ``` 
 
-### Build and deploy coprocessor demo code
+### Build and deploy the coprocessor demo code
 * Compile a fat jar, and copy it to HBase classpath
 ```shell
 $ sbt assembly
@@ -34,5 +34,3 @@ $ $HBASE_HOME/bin/hbase-start.sh
 ```shell 
 $ sbt test
 ```
-The tests loads the example dataset in data/mobile_device_samples.tsv to HBase and query "impressions" and "uniques" 
-group on "device" field for campaign "1".
