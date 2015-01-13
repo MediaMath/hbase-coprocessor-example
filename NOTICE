@@ -1,0 +1,17 @@
+HBase Coprocessor Example
+
+Copyright 2014 MediaMath
+
+3rd Party Dependencies:
+
+  HBase
+  Apache Public License 2.0
+  http://hbase.apache.org
+
+  Algebird
+  Apache Public License 2.0
+  https://github.com/twitter/algebird
+
+  Chill
+  Apache Public License 2.0
+  https://github.com/twitter/chill
